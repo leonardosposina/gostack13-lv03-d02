@@ -78,12 +78,12 @@ const CartProvider: React.FC = ({ children }) => {
         // eslint-disable-next-line no-param-reassign
         product.quantity = 1;
         setProducts([...products, product]);
-      }
 
-      await AsyncStorage.setItem(
-        '@GoMarketplace:cart',
-        JSON.stringify(products),
-      );
+        await AsyncStorage.setItem(
+          '@GoMarketplace:cart',
+          JSON.stringify(products),
+        );
+      }
     },
     [increment, products],
   );
